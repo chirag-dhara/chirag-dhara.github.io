@@ -3,188 +3,274 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Chirag Dhara | Climate Scientist & Sustainability Researcher</title>
-    <meta name="description" content="Official website of Dr. Chirag Dhara. Assistant Professor at Krea University, IPCC contributing author, focusing on climate physics, sustainability, and equity.">
+    <title>Dr. Chirag Dhara | Scientist & Academic</title>
     <style>
-        :root { --primary: #004d40; --accent: #00796b; --text: #333; --bg: #fafafa; }
-        body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height: 1.7; color: var(--text); max-width: 900px; margin: 0 auto; padding: 40px 20px; background: var(--bg); }
-        header { border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; }
-        h1 { font-size: 2.8rem; color: var(--primary); margin: 0; letter-spacing: -0.5px; }
-        .subtitle { font-size: 1.15rem; color: #555; font-weight: 300; margin-top: 5px; }
-        nav { margin-bottom: 40px; }
-        nav a { margin-right: 20px; text-decoration: none; color: var(--primary); font-weight: bold; border-bottom: 2px solid transparent; transition: border-color 0.3s; }
-        nav a:hover { border-bottom: 2px solid var(--accent); }
-        h2 { color: var(--primary); border-bottom: 1px solid #ddd; padding-bottom: 5px; margin-top: 50px; text-transform: uppercase; font-size: 1.2rem; letter-spacing: 1px; }
+        :root { 
+            --primary: #004d40; 
+            --accent: #00796b; 
+            --text: #333; 
+            --bg: #ffffff;
+            --muted: #f4f4f4;
+            --grayed: #cccccc;
+        }
+        body { 
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            max-width: 1000px; 
+            margin: 0 auto; 
+            padding: 40px 20px; 
+            background: var(--bg); 
+        }
         
-        /* Basic Item Styling */
-        .item { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 20px; border: 1px solid #eee; }
-        .item-title { font-weight: bold; color: #111; display: block; margin-bottom: 5px; font-size: 1.05rem; }
-        .tag { display: inline-block; background: #e0f2f1; color: var(--primary); padding: 3px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; }
-        .btn { display: inline-block; margin-top: 10px; color: #fff; background-color: var(--accent); padding: 6px 14px; text-decoration: none; border-radius: 4px; font-size: 0.85rem; font-weight: bold; transition: background 0.3s; }
-        .btn:hover { background-color: var(--primary); }
-        
-        /* Collapsible Accordion Styling for Papers */
-        details { background: white; padding: 18px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 15px; box-shadow: 0 2px 4px rgba(0,0,0,0.04); transition: all 0.3s ease; }
-        summary { font-weight: bold; color: #111; cursor: pointer; list-style: none; display: flex; align-items: flex-start; justify-content: space-between; font-size: 1.05rem; }
-        summary::-webkit-details-marker { display: none; } 
-        summary::after { content: '+'; font-size: 1.5rem; color: var(--accent); line-height: 1; margin-left: 15px; }
+        /* Header & Profile Photo */
+        header { 
+            display: flex; 
+            align-items: center; 
+            gap: 30px; 
+            border-bottom: 2px solid var(--primary); 
+            padding-bottom: 30px; 
+            margin-bottom: 40px; 
+        }
+        .profile-photo { 
+            width: 180px; 
+            height: 180px; 
+            border-radius: 50%; 
+            object-fit: cover; 
+            border: 3px solid var(--primary);
+            background: #eee;
+        }
+        .header-text h1 { 
+            font-size: 2.8rem; 
+            color: var(--primary); 
+            margin: 0; 
+            letter-spacing: -1px; 
+        }
+        .header-text .subtitle { 
+            /* Improved Readability for Subtitle */
+            font-family: 'Georgia', serif; 
+            font-style: italic;
+            font-size: 1.25rem; 
+            color: #555; 
+            margin-top: 15px; /* Spaced out from title */
+            letter-spacing: 0.5px;
+        }
+
+        /* Navigation */
+        nav { 
+            display: flex; 
+            justify-content: space-around; /* Better spacing for tabs */
+            margin-bottom: 50px; 
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        nav a { 
+            text-decoration: none; 
+            color: var(--primary); 
+            font-weight: 600; 
+            font-size: 1rem;
+            padding: 5px 10px;
+            transition: color 0.3s;
+        }
+        nav a:hover { color: var(--accent); }
+
+        h2 { 
+            color: var(--primary); 
+            text-transform: uppercase; 
+            font-size: 1.3rem; 
+            letter-spacing: 2px; 
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 50px;
+        }
+        h3 { color: var(--accent); font-size: 1.1rem; margin-top: 30px; }
+
+        /* Publications & Accordion */
+        details { background: #fff; padding: 15px; border: 1px solid #eee; border-radius: 8px; margin-bottom: 12px; transition: all 0.3s; }
+        summary { cursor: pointer; list-style: none; font-weight: bold; display: flex; justify-content: space-between; align-items: flex-start; }
+        summary::-webkit-details-marker { display: none; }
+        summary::after { content: '+'; color: var(--accent); font-size: 1.4rem; }
         details[open] summary::after { content: '−'; }
-        .pub-venue { font-size: 0.9rem; color: #666; font-weight: normal; display: block; margin-top: 4px; }
-        .accessible-summary { font-size: 0.95rem; color: #444; background: #f4fbfa; padding: 18px; border-left: 4px solid var(--accent); margin-top: 15px; border-radius: 0 4px 4px 0; }
         
-        footer { margin-top: 60px; padding-top: 20px; border-top: 1px solid #ddd; text-align: center; font-size: 0.85rem; color: #777; }
+        .pub-info { font-size: 0.95rem; line-height: 1.4; color: #111; padding-right: 20px; }
+        .pub-meta { display: block; font-weight: normal; color: #666; font-size: 0.9rem; margin-top: 4px; }
+        .gist { background: #f9f9f9; padding: 15px; margin-top: 15px; border-left: 4px solid var(--accent); font-size: 0.95rem; }
+        
+        .btn { display: inline-block; margin-top: 10px; padding: 6px 15px; border-radius: 4px; text-decoration: none; font-size: 0.85rem; font-weight: bold; }
+        .btn-active { background: var(--accent); color: #fff; }
+        .btn-disabled { background: var(--grayed); color: #888; cursor: not-allowed; }
+
+        /* Media List */
+        .media-list { list-style: none; padding: 0; }
+        .media-item { margin-bottom: 15px; padding-bottom: 10px; border-bottom: 1px solid #f0f0f0; }
+        .media-link { color: var(--accent); font-weight: bold; text-decoration: none; }
+        .media-link:hover { text-decoration: underline; }
+
+        footer { text-align: center; margin-top: 80px; font-size: 0.8rem; color: #999; }
     </style>
 </head>
 <body>
 
 <header>
-    <h1>Dr. Chirag Dhara</h1>
-    <p class="subtitle">Climate & Sustainability Scientist | Assistant Professor, Krea University</p>
+    <img src="your-photo.jpg" alt="Dr. Chirag Dhara" class="profile-photo">
+    <div class="header-text">
+        <h1>Chirag Dhara, Ph.D.</h1>
+        <p class="subtitle">Climate & Sustainability Scientist | Assistant Professor, Krea University</p>
+    </div>
 </header>
 
 <nav>
     <a href="#about">About</a>
-    <a href="#publications">Research</a>
-    <a href="#policy">Policy</a>
-    <a href="#media">Media & Outreach</a>
+    <a href="#interests">Research Interests</a>
+    <a href="#publications">Publications</a>
+    <a href="#media">Media and Outreach</a>
 </nav>
 
 <section id="about">
-    <h2>Profile</h2>
-    <p>I am a scientist driven by the challenge of reconciling human development with planetary boundaries. With a unique foundation of dual doctorates—one in <strong>Quantum Information</strong> (ICFO, Spain) and another in <strong>Earth System Science</strong> (Max Planck Institute for Biogeochemistry, Germany)—I approach climate challenges with both rigorous mathematical modeling and a deep understanding of ecological limits.</p>
-    <p>Currently serving as an Assistant Professor at Krea University, my work bridges the gap between hard physical science and socio-economic realities. My research spans atmospheric thermodynamics, the impact of aerosols on the Indian Monsoon, and critiques of traditional, GDP-centric development metrics. Ultimately, I aim to make climate science a tool for public empowerment, equity, and scalable sustainability.</p>
+    <h2>About</h2>
+    <p>I am an interdisciplinary scientist currently serving as an <strong>Assistant Professor</strong> at <strong>Krea University</strong>[cite: 9, 10]. My career trajectory spans fundamental physics and earth system science, holding dual doctorates: a Ph.D. in <strong>Climate Science</strong> from the Max Planck Institute for Biogeochemistry (2017) and a Ph.D. in <strong>Quantum Information</strong> from the Universitat Politècnica de Catalunya (2013)[cite: 17, 18].</p>
+    <p>Prior to my current appointment, I served as a <strong>Research Associate</strong> at the Indian Institute of Tropical Meteorology (IITM) in Pune[cite: 11, 15]. My work is characterized by the application of rigorous physical principles to pressing global challenges in climate dynamics and sustainability[cite: 3, 4, 7].</p>
 </section>
 
-<section id="publications">
-    <h2>Selected Research & Publications</h2>
-    <p style="font-size: 0.9rem; color: #666; margin-bottom: 20px;"><em>Click on any title to read a plain-English summary and access the PDF.</em></p>
-
-    <details>
-        <summary>
-            <div>A scalability-centric perspective on global human development within environmental limits
-                <span class="pub-venue">Sustainability: Science, Practice and Policy (2025)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> What does it mean to be a "developed" country if that lifestyle destroys the planet? This paper argues that true development must be scalable to the whole world without breaking ecological limits. We show why countries balancing good living standards with low ecological footprints (like Costa Rica) are better role models for the future than traditionally wealthy nations.
-            <br><a href="pdfs/scalability-2025.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-
-    <details>
-        <summary>
-            <div>Interpreting climate performance indices: implications for equitable and effective policy
-                <span class="pub-venue">Climate Policy (2025)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> Popular "green" rankings often unfairly penalize developing nations while rewarding wealthy countries that actually cause more per-capita emissions. We unpack why these metrics are mathematically and ethically skewed, and propose ways to measure climate action that are actually fair to the Global South.
-            <br><a href="pdfs/indices-2025.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-
-    <details>
-        <summary>
-            <div>Future intensification of Northern Hemisphere monsoons due to declining remote aerosol pollution
-                <span class="pub-venue">Environmental Research Letters (2025)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> Cleaning up air pollution is good for human health, but it has a hidden global side effect. As North America and Europe reduce their "aerosol" pollution, the Northern Hemisphere warms faster. Our research shows this shifting heat imbalance is projected to significantly intensify India's monsoon rains in the future.
-            <br><a href="pdfs/monsoons-aerosols-2025.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-
-    <details>
-        <summary>
-            <div>A post-AR6 update on observed and projected climate change in India
-                <span class="pub-venue">PLOS Climate (2025)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> An updated "state of the climate" specifically for India. Following the latest UN IPCC reports, we synthesized the most current data to provide clear projections on how temperatures, rainfall, and extreme weather events will change across the Indian subcontinent in the coming decades.
-            <br><a href="pdfs/india-climate-update-2025.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-
-    <details>
-        <summary>
-            <div>Bridging climate science, policy, and communities: collaborative pathways for climate resilience
-                <span class="pub-venue">Frontiers in Climate (2025)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> Top-down science isn't enough to protect vulnerable regions. This paper highlights how scientists, policymakers, and local communities in the Indo-Pacific must collaborate—rather than working in silos—to build practical, on-the-ground resilience against climate impacts.
-            <br><a href="pdfs/collaborative-pathways-2025.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-
-    <details>
-        <summary>
-            <div>Compound weather and climate extremes in the Asian region
-                <span class="pub-venue">Frontiers in Climate (2025)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> Climate disasters rarely happen one at a time anymore. We explore the rising threat of "compound extremes"—like simultaneous heatwaves and droughts, or floods combined with cyclones—across Asia, and offer concrete policy recommendations to manage these cascading, multi-layered risks.
-            <br><a href="pdfs/compound-extremes-2025.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-
-    <details>
-        <summary>
-            <div>Advancing South Asian monsoon climate change projections: Challenges and opportunities
-                <span class="pub-venue">J. Ind. Geophys. Union (2022)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> Why are climate models historically bad at predicting the South Asian monsoon? This paper breaks down the technical roadblocks—from modeling microscopic clouds to local land-use changes—and maps out how the scientific community can improve these crucial weather forecasts.
-            <br><a href="pdfs/monsoon-projections-2022.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-
-    <details>
-        <summary>
-            <div>Constraining Global Changes in Temperature and Precipitation
-                <span class="pub-venue">Geophysical Research Letters (2020)</span>
-            </div>
-        </summary>
-        <div class="accessible-summary">
-            <strong>The Gist:</strong> Using fundamental laws of physics, this paper offers a new, simplified mathematical way to calculate how much the Earth will warm and how much more it will rain, based directly on how much extra energy the Earth's surface is absorbing from the sun and greenhouse gases.
-            <br><a href="pdfs/constraining-global-changes-2020.pdf" class="btn" target="_blank">Download PDF</a>
-        </div>
-    </details>
-</section>
-
-<section id="policy">
-    <h2>Policy Reports & Assessments</h2>
-    <div class="item">
-        <span class="tag">Global Policy</span>
-        <span class="item-title">IPCC Sixth Assessment Report (AR6) - Interactive Atlas</span>
-        <p><strong>Contributing Author (2021).</strong> Provided regional climate data, analysis, and visualizations informing global climate policy under the United Nations framework.</p>
-    </div>
-    <div class="item">
-        <span class="tag">National Policy</span>
-        <span class="item-title">Assessment of Climate Change over the Indian Region</span>
-        <p><strong>Coordinating Lead Author / Drafting Author (2020).</strong> Co-authored India's first official national climate change assessment report published by the Ministry of Earth Sciences (MoES).</p>
-    </div>
-</section>
-
-<section id="media">
-    <h2>Selected Media & Public Outreach</h2>
-    <p>I frequently write for the public to translate complex climate science and development critiques into actionable insights.</p>
-    
+<section id="interests">
+    <h2>Research Interests</h2>
     <ul>
-        <li><a href="#" style="color: var(--accent); font-weight: bold;">Behind the shimmer, the toxic story of mica and forever chemicals</a> (2025) – <em>Mongabay India</em></li>
-        <li><a href="#" style="color: var(--accent); font-weight: bold;">The dangerous illusion cast by development rankings</a> (2025) – <em>The Hindu</em></li>
-        <li><a href="#" style="color: var(--accent); font-weight: bold;">Extreme heat threatens health, jobs and democracy in India</a> (2024) – <em>360info</em></li>
-        <li><a href="#" style="color: var(--accent); font-weight: bold;">Restoring the Planet Will Need More than a Climate Price Tag</a> (2023) – <em>Scientific American</em></li>
-        <li><a href="#" style="color: var(--accent); font-weight: bold;">How a warming Pacific Ocean and climate change will impact agriculture</a> (2023) – <em>Nature India</em></li>
+        <li>Global and regional monsoon projections [cite: 4]</li>
+        <li>Environmental performance of countries [cite: 5]</li>
+        <li>Climate responsibility and finance [cite: 6]</li>
+        <li>Sustainable development [cite: 7]</li>
     </ul>
 </section>
 
+<section id="publications">
+    <h2>Publications</h2>
+
+    <h3>Journal Articles</h3>
+    
+    <details>
+        <summary>
+            <span class="pub-info">
+                A post-AR6 update on observed and projected climate change in India
+                <span class="pub-meta"><strong>Chirag Dhara</strong>, Aditi Deshpande, Roxy Mathew Koll, Padmini Delpadado, and Mandira Shreshta. <em>PLOS Climate</em> (2025)</span>
+            </span>
+        </summary>
+        <div class="gist">
+            An updated synthesis of the most current climate data for the Indian subcontinent, providing projections on temperature, rainfall, and extreme weather following the latest IPCC frameworks.
+        </div>
+        <a href="pdfs/india-update-2025.pdf" class="btn btn-active">Download PDF</a>
+    </details>
+
+    <details>
+        <summary>
+            <span class="pub-info">
+                Interpreting climate performance indices: implications for equitable and effective policy
+                <span class="pub-meta"><strong>Chirag Dhara</strong>, Anshuman Gupta, Ishita Bagri, Sebastian Block, and Kamal Murari. <em>Climate Policy</em> (2025)</span>
+            </span>
+        </summary>
+        <div class="gist">
+            A critical evaluation of how "green" rankings can be mathematically and ethically skewed against developing nations, proposing fairer metrics for global climate action.
+        </div>
+        <a href="pdfs/indices-2025.pdf" class="btn btn-active">Download PDF</a>
+    </details>
+
+    <details>
+        <summary>
+            <span class="pub-info">
+                Future Intensification of Northern Hemisphere Monsoons Due to Declining Remote Aerosol Pollution
+                <span class="pub-meta">K P Sooraj, <strong>Chirag Dhara</strong>, D. C. Ayantika, et al. <em>Environmental Research Letters</em> (2025)</span>
+            </span>
+        </summary>
+        <div class="gist">
+            Investigating how the reduction of aerosol pollution in Europe and North America influences Northern Hemisphere heat patterns and intensifies monsoon rainfall in regions like India.
+        </div>
+        <a href="pdfs/monsoon-aerosol-2025.pdf" class="btn btn-active">Download PDF</a>
+    </details>
+
+    <details>
+        <summary>
+            <span class="pub-info">
+                Optimal measurements and fixed-point maps
+                <span class="pub-meta"><strong>Chirag Dhara</strong> and N.D. Hari Dass. <em>Physical Review A</em> (2005)</span>
+            </span>
+        </summary>
+        <div class="gist"></div> <span class="btn btn-disabled">Download PDF (Unavailable)</span>
+    </details>
+
+    <h3>Under Review</h3>
+    <details>
+        <summary>
+            <span class="pub-info">
+                Historic Global Inequality and Avoided Climate Destabilisation
+                <span class="pub-meta">Shrutee Jalan, <strong>Chirag Dhara</strong>, Shoibal Chakraborty, Soumyajit Bhar, Ashwin Seshadri. (2025)</span>
+            </span>
+        </summary>
+        <div class="gist">Currently being revised after the first round of review in <em>Climate Policy</em>.</div>
+        <a href="https://osf.io/a3zng" class="btn btn-active">View Preprint</a>
+    </details>
+
+    <h3>Under Preparation</h3>
+    <details>
+        <summary>
+            <span class="pub-info">A New Development Classification for the 21st Century <span class="pub-meta"><strong>Chirag Dhara</strong> and Thomas Bejoy.</span></span>
+        </summary>
+        <div class="gist"></div>
+        <span class="btn btn-disabled">Download PDF</span>
+    </details>
+
+    <h3>Book Chapters</h3>
+    <details>
+        <summary>
+            <span class="pub-info">
+                Indian Ocean Warming
+                <span class="pub-meta">Roxy M.K., C. Gnanaseelan, ... <strong>Chirag Dhara</strong> (Lead author). <em>Assessment of Climate Change over the Indian Region</em> (2020)</span>
+            </span>
+        </summary>
+        <div class="gist">Featured in the official national assessment report by the Ministry of Earth Sciences.</div>
+        <span class="btn btn-disabled">Download PDF</span>
+    </details>
+</section>
+
+<section id="media">
+    <h2>Media and Outreach</h2>
+    <div class="media-list">
+        <div class="media-item">
+            12. <a href="#" class="media-link">"'Easy' climate fixes are a trap, featuring Dr Chirag Dhara"</a> (2025). <em>The Boring Climate Podcast</em>. [cite: 102]
+        </div>
+        <div class="media-item">
+            11. <a href="#" class="media-link">Behind the shimmer, the toxic story of mica and forever chemicals</a> (2025). <em>Mongabay India</em>. [cite: 103]
+        </div>
+        <div class="media-item">
+            10. <a href="#" class="media-link">Who is Really Developed?</a> (2025). <em>Down To Earth</em>. [cite: 104]
+        </div>
+        <div class="media-item">
+            9. <a href="#" class="media-link">The dangerous illusion cast by development rankings</a> (2025). <em>The Hindu</em>. [cite: 105]
+        </div>
+        <div class="media-item">
+            8. <a href="#" class="media-link">Why sustainable development ought to look more like Costa Rica, less like Norway</a> (2024). <em>360info</em>. [cite: 106]
+        </div>
+        <div class="media-item">
+            7. <a href="#" class="media-link">Extreme heat threatens health, jobs and democracy in India</a> (2024). <em>360info</em>. [cite: 108]
+        </div>
+        <div class="media-item">
+            6. <a href="#" class="media-link">Restoring the Planet Will Need More than a Climate Price Tag</a> (2023). <em>Scientific American</em>. [cite: 109]
+        </div>
+        <div class="media-item">
+            5. <a href="#" class="media-link">Indian aviation's turbulent path to sustainability</a> (2023). <em>Mongabay India</em>. [cite: 110]
+        </div>
+        <div class="media-item">
+            4. <a href="#" class="media-link">How a warming Pacific Ocean and climate change will impact agriculture</a> (2023). <em>Nature India</em>. [cite: 111]
+        </div>
+        <div class="media-item">
+            3. <a href="#" class="media-link">What will an El Nino bring next to India?</a> (2023). <em>360info</em>. [cite: 112]
+        </div>
+        <div class="media-item">
+            2. <a href="#" class="media-link">How and Why India's Climate will Change in the Coming Decades</a> (2021). <em>The India Forum</em>. [cite: 113]
+        </div>
+    </div>
+</section>
+
 <footer>
-    <p>&copy; 2026 Dr. Chirag Dhara. Contact: chirag.dhara@krea.edu.in</p>
+    <p>&copy; 2026 Dr. Chirag Dhara | Assistant Professor, Krea University | <a href="mailto:chirag.dhara@krea.edu.in">Email</a></p>
 </footer>
 
 </body>
